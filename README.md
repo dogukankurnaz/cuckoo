@@ -1,4 +1,4 @@
 # cuckoo
 :tr:
 
-<span>&#127481;&#127479;</span>
+<span>&#x1F1F9;&#x1F1F7;</span>
