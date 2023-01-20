@@ -45,7 +45,7 @@ cuckoo@cuckoo-VirtualBox:~$ ./cuckoo_pre.sh
 ## ./virtualenvwrapper.sh
 
 ```console
-cuckoo@cuckoo-VirtualBox:~$  ./virtualenvwrapper.sh
+cuckoo@cuckoo-VirtualBox:~$ sudo -u cuckoo ./virtualenvwrapper.sh
 ```
 
 ![](https://i.hizliresim.com/1i1dp2v.png)
