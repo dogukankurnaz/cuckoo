@@ -38,14 +38,14 @@ cuckoo@cuckoo-VirtualBox:~/Desktop/cuckoo$ find -type f -name '*.sh' -exec chmod
 ## ./cuckoo_pre.sh
 
 ```console
-cuckoo@cuckoo-VirtualBox:~$ sudo ./cuckoo_pre.sh
+cuckoo@cuckoo-VirtualBox:~$ ./cuckoo_pre.sh
 ```
 ![](https://i.hizliresim.com/2y34dji.png)
 ![enter image description here](https://i.hizliresim.com/heeqi5h.png)
 ## ./virtualenvwrapper.sh
 
 ```console
-cuckoo@cuckoo-VirtualBox:~$ sudo ./virtualenvwrapper.sh
+cuckoo@cuckoo-VirtualBox:~$  ./virtualenvwrapper.sh
 ```
 
 ![](https://i.hizliresim.com/1i1dp2v.png)
@@ -64,7 +64,7 @@ cuckoo@cuckoo-VirtualBox:~$ pip install -U cuckoo
 ## ./cuckoo_virtualmachine.sh
 
 ```console
-cuckoo@cuckoo-VirtualBox:~$ sudo ./cuckoo_virtualmachine.sh
+cuckoo@cuckoo-VirtualBox:~$  ./cuckoo_virtualmachine.sh
 ```
 
 
