@@ -72,8 +72,7 @@ sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 getcap /usr/sbin/tcpdump
 sudo aa-disable /usr/sbin/tcpdump
 sudo usermod -a -G vboxusers cuckoo
-sudo su cuckoo
-bash cuckoo_pre.sh
+sleep 4
 echo -e "${BWHITE}*------------------------------------------------------------------------------------------------------*"
 echo -e "${BWHITE}                                   Installing Crypto Libraries                                          "
 echo -e "${BWHITE}*------------------------------------------------------------------------------------------------------*"

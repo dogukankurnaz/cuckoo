@@ -65,17 +65,17 @@ sudo apt-get -y install python-pip python-virtualenv python-setuptools swig
 pip install -U vmcloak
 
 vmcloak-vboxnet0
-
+sleep 4
 vmcloak init --verbose --win7x64 win7x64base --cpus 2 --ramsize 2048
-
+sleep 10
 vmcloak clone win7x64base win7x64cuckoo
-
+sleep 10
 vmcloak list deps
-
+sleep 10
 vmcloak install win7x64cuckoo ie11
-
+sleep 10
 vmcloak snapshot --count 1 win7x64cuckoo 192.168.56.101
-
+sleep 10
 echo -e "${BWHITE}*------------------------------------------------------------------------------------------------------*"
 echo -e "${BWHITE}                                       Process Completed Successfully!                                  "
 echo -e "${BWHITE}*------------------------------------------------------------------------------------------------------*"
