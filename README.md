@@ -1,17 +1,12 @@
 # Cuckoo Sandbox!
 **Language:**  
-[![Flag: Turkey on Sony Playstation ](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/60/sony/336/flag-turkey_1f1f9-1f1f7.png)](test.com)[![Flag: United Kingdom on Sony Playstation ](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/60/sony/336/flag-united-kingdom_1f1ec-1f1e7.png)](test.com)
-
-Cuckoo Sandbox açık kaynaklı Malware analiz sistemidir. Bunu yalıtılmış bir ortamda gerçekleştirir ve size geniş çaplı bir rapor sunar.
-Cuckoo Sandbox'u kendi kişisel cihazınızda ya da sunucunuz da otomatik kurmak için gerekli adımları izlemeniz yeterli. 
+[![Flag: United Kingdom on Sony Playstation ](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/60/sony/336/flag-united-kingdom_1f1ec-1f1e7.png)](https://github.com/dogukankurnaz/cuckoo)
 
 Cuckoo Sandbox is an open source Malware analysis system. It does this in an isolated environment and gives you a comprehensive report.
 Just follow the necessary steps to automatically install Cuckoo Sandbox on your own personal device or server.
 
 
-# Başlangıç
-
-Başlamadan önce anlık görüntü yedeği almayı unutmayın.
+# First Steps
 Don't forget to take a snapshot backup before you start.
 
 ```console
