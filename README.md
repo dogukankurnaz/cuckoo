@@ -10,10 +10,15 @@ Just follow the necessary steps to automatically install Cuckoo Sandbox on your 
 Don't forget to take a snapshot backup before you start.
 
 I have used Virtualbox for testing.
-OS: UBUNTU 18.04 LTS
+
+OS: Ubuntu 18.04 LTS
+
 my username:cuckoo
+
 my machine name:cuckoo-VirtualBox
+
 Very Important! :Extended Feature "**Enable Nested VT-x/AMD-V**" is enabled in the Processor.
+
 ![](https://i.hizliresim.com/6apjynl.png)
 
 
@@ -21,11 +26,11 @@ Very Important! :Extended Feature "**Enable Nested VT-x/AMD-V**" is enabled in t
 
 
 ```console
-dogukankurnaz@ubuntu:~$ git clone https://github.com/dogukankurnaz/cuckoo.git
-dogukankurnaz@ubuntu:~$ cd cuckoo
-dogukankurnaz@ubuntu:~/Desktop/cuckoo$ ls
+cuckoo@cuckoo-VirtualBox:~$ git clone https://github.com/dogukankurnaz/cuckoo.git
+cuckoo@cuckoo-VirtualBox:~$ cd cuckoo
+cuckoo@cuckoo-VirtualBox:~/Desktop/cuckoo$ ls
 cuckoo_pre.sh  cuckoo_virtualmachine.sh  README.md  virtualenvwrapper.sh
-dogukankurnaz@ubuntu:~/Desktop/cuckoo$ find -type f -name '*.sh' -exec chmod +x {} +
+cuckoo@cuckoo-VirtualBox:~/Desktop/cuckoo$ find -type f -name '*.sh' -exec chmod +x {} +
 ```
 
 
@@ -33,14 +38,14 @@ dogukankurnaz@ubuntu:~/Desktop/cuckoo$ find -type f -name '*.sh' -exec chmod +x 
 ## ./cuckoo_pre.sh
 
 ```console
-dogukankurnaz@ubuntu:~$ sudo ./cuckoo_pre.sh
+cuckoo@cuckoo-VirtualBox:~$ sudo ./cuckoo_pre.sh
 ```
 ![](https://i.hizliresim.com/2y34dji.png)
 ![enter image description here](https://i.hizliresim.com/heeqi5h.png)
 ## ./virtualenvwrapper.sh
 
 ```console
-dogukankurnaz@ubuntu:~$ sudo ./virtualenvwrapper.sh
+cuckoo@cuckoo-VirtualBox:~$ sudo ./virtualenvwrapper.sh
 ```
 
 ![](https://i.hizliresim.com/1i1dp2v.png)
@@ -50,16 +55,16 @@ dogukankurnaz@ubuntu:~$ sudo ./virtualenvwrapper.sh
 ![](https://i.hizliresim.com/3fk9hnw.png)
 
 ```console
-dogukankurnaz@ubuntu:~$ source ~/.bashrc
-dogukankurnaz@ubuntu:~$ mkvirtualenv -p python2.7 cuckoo-test
-dogukankurnaz@ubuntu:~$ pip install -U pip setuptools
-dogukankurnaz@ubuntu:~$ pip install -U cuckoo
+cuckoo@cuckoo-VirtualBox:~$ source ~/.bashrc
+cuckoo@cuckoo-VirtualBox:~$ mkvirtualenv -p python2.7 cuckoo-test
+cuckoo@cuckoo-VirtualBox:~$ pip install -U pip setuptools
+cuckoo@cuckoo-VirtualBox:~$ pip install -U cuckoo
 ```
 
 ## ./cuckoo_virtualmachine.sh
 
 ```console
-dogukankurnaz@ubuntu:~$ sudo ./cuckoo_virtualmachine.sh
+cuckoo@cuckoo-VirtualBox:~$ sudo ./cuckoo_virtualmachine.sh
 ```
 
 
@@ -72,7 +77,7 @@ We learn the interface name with the ifconfig, command. My device's is enp0s3.
 
 
 ```console
-dogukankurnaz@ubuntu:~$ ifconfig
+cuckoo@cuckoo-VirtualBox:~$ ifconfig
 enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
         inet6 fe80::b36b:4516:9694:c5cb  prefixlen 64  scopeid 0x20<link>
@@ -105,23 +110,23 @@ vboxnet0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
 your interface name=**enp0s3** (My Device)
 We replace the part that says with the interface name of our own device.
 ```console
-dogukankurnaz@ubuntu:~$ vmcloak list vms
-dogukankurnaz@ubuntu:~$ sudo sysctl -w net.ipv4.conf.vboxnet0.forwarding=1
+cuckoo@cuckoo-VirtualBox:~$ vmcloak list vms
+cuckoo@cuckoo-VirtualBox:~$ sudo sysctl -w net.ipv4.conf.vboxnet0.forwarding=1
 (if your network interface is different change me!)
-dogukankurnaz@ubuntu:~$ sudo sysctl -w net.ipv4.conf.enp0s3.forwarding=1 
+cuckoo@cuckoo-VirtualBox:~$ sudo sysctl -w net.ipv4.conf.enp0s3.forwarding=1 
 ```
 
 ![enter image description here](https://i.hizliresim.com/d5ax4n6.png)
 
 ```console
-dogukankurnaz@ubuntu:~$ sudo nano /etc/sysctl.conf
+cuckoo@cuckoo-VirtualBox:~$ sudo nano /etc/sysctl.conf
 ```
 ![](https://i.hizliresim.com/guo0rul.png)
 
 ```console
-dogukankurnaz@ubuntu:~$ sudo iptables -t nat -A POSTROUTING -o enp0s3 -s 192.168.56.0/24 -j MASQUERADE
-dogukankurnaz@ubuntu:~$ sudo iptables -P FORWARD DROP
-dogukankurnaz@ubuntu:~$ sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+cuckoo@cuckoo-VirtualBox:~$ sudo iptables -t nat -A POSTROUTING -o enp0s3 -s 192.168.56.0/24 -j MASQUERADE
+cuckoo@cuckoo-VirtualBox:~$ sudo iptables -P FORWARD DROP
+cuckoo@cuckoo-VirtualBox:~$ sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 cuckoo@cuckoo-VirtualBox:~$ sudo iptables -A FORWARD -s 192.168.56.0/24 -j ACCEPT
 ```
 
