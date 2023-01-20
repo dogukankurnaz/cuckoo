@@ -9,6 +9,17 @@ Just follow the necessary steps to automatically install Cuckoo Sandbox on your 
 # First Steps
 Don't forget to take a snapshot backup before you start.
 
+I have used Virtualbox for testing.
+OS: UBUNTU 18.04 LTS
+my username:cuckoo
+my machine name:cuckoo-VirtualBox
+Very Important! :Extended Feature "**Enable Nested VT-x/AMD-V**" is enabled in the Processor.
+![](https://i.hizliresim.com/6apjynl.png)
+
+
+
+
+
 ```console
 dogukankurnaz@ubuntu:~$ git clone https://github.com/dogukankurnaz/cuckoo.git
 dogukankurnaz@ubuntu:~$ cd cuckoo
@@ -111,13 +122,13 @@ dogukankurnaz@ubuntu:~$ sudo nano /etc/sysctl.conf
 dogukankurnaz@ubuntu:~$ sudo iptables -t nat -A POSTROUTING -o enp0s3 -s 192.168.56.0/24 -j MASQUERADE
 dogukankurnaz@ubuntu:~$ sudo iptables -P FORWARD DROP
 dogukankurnaz@ubuntu:~$ sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
-dogukankurnaz@ubuntu:~$ sudo iptables -A FORWARD -s 192.168.56.0/24 -j ACCEPT
+cuckoo@cuckoo-VirtualBox:~$ sudo iptables -A FORWARD -s 192.168.56.0/24 -j ACCEPT
 ```
 
 ![](https://i.hizliresim.com/4mcgjk1.png)
 
 ```console
-dogukankurnaz@ubuntu:~$ cuckoo init
+cuckoo@cuckoo-VirtualBox:~$ cuckoo init
 ```
 ![](https://i.hizliresim.com/7xmxm6i.png)
 
