@@ -170,6 +170,50 @@ analyzer  distributed  __init__.py    monitor  signatures  stuff    supervisord.
 ```
 ![](https://i.hizliresim.com/5b9urf7.png)
 
+Write your own username where it says "cuckoo". The username of my device that I set up is **cuckoo.**
+```console
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~$ cuckoo rooter --sudo --group cuckoo 
+```
+
+![](https://i.hizliresim.com/w8hkbje.png)
+
+Open new terminal.
+
+```console
+cuckoo@cuckoo-VirtualBox:~$ workon cuckoo-test
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~$ cd /.cuckoo/con
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~/.cuckoo/conf$ while read -r vm ip; do cuckoo machine --add $vm $ip; done < <(vmcloak list vms)
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~/.cuckoo/conf$ nano virtualbox.conf
+```
+![](https://i.hizliresim.com/mtdk93z.png)
+![](https://i.hizliresim.com/4vtjydj.png)
+
+Press "CTRL + X" and save "Y".
+
+
+```console
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~/.cuckoo/conf$ nano routing.conf 
+```
+Type own network interface (type ifconfig command to find out)
+
+![](https://i.hizliresim.com/dnc0dxy.png)
+
+Press "CTRL + X" and save "Y".
+
+
+```console
+(cuckoo-test) cuckoo@cuckoo-VirtualBox:~/.cuckoo/conf$ nano reporting.conf
+```
+
+
+![enter image description here](https://i.hizliresim.com/arokn7y.png)
+
+
+
+
+
+
+
 ## Export a file
 
 You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
