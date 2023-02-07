@@ -1,6 +1,4 @@
 # Cuckoo Sandbox!
-**Language:**  
-[![Flag: United Kingdom on Sony Playstation ](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/60/sony/336/flag-united-kingdom_1f1ec-1f1e7.png)](https://github.com/dogukankurnaz/cuckoo)
 
 Cuckoo Sandbox is an open source Malware analysis system. It does this in an isolated environment and gives you a comprehensive report.
 Just follow the necessary steps to automatically install Cuckoo Sandbox on your own personal device or server.
