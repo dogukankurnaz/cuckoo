@@ -3,6 +3,13 @@
 Cuckoo Sandbox is an open source Malware analysis system. It does this in an isolated environment and gives you a comprehensive report.
 Just follow the necessary steps to automatically install Cuckoo Sandbox on your own personal device or server.
 
+```console
+**Model:** Kai
+**Açıklama:** Kariyer.net'in çalışanlarına özel yapay zeka asistanı.
+**Dil:** Türkçe
+**Ton:** Kurumsal
+```
+
 
 # First Steps
 Don't forget to take a snapshot backup before you start.
